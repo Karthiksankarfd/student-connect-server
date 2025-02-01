@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 // Replace with your MongoDB username and URL-encoded password
 const username = "karthik";
 const password = encodeURIComponent("p10MXExNf0EBSnks"); // URL-encode if it contains special characters
-const clusterUrl = "cluster-one.buuxkm3.mongodb.net"; // Your MongoDB Atlas cluster URL
-const database = "studentconnect"; // Replace with your database name
+const clusterUrl = "cluster-one.buuxkm3.mongodb.net"; //  MongoDB Atlas cluster URL
+const database = "studentconnect"; //  database name
 
 
 const uri = `mongodb+srv://${username}:${password}@${clusterUrl}/${database}?retryWrites=true&w=majority`;

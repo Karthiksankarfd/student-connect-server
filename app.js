@@ -38,7 +38,7 @@ app.use((req, res,next)=>{
 
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ["http://localhost:3000","https://6c84-2401-4900-6301-54aa-50e9-d125-d12a-da82.ngrok-free.app","http://192.168.1.6:3000","http://192.168.1.6:5000","https://679ccc74b0b3940a85b98bad--glowing-figolla-8a921f.netlify.app"]; // frontend origin
+    const allowedOrigins = ["http://localhost:3000","https://6c84-2401-4900-6301-54aa-50e9-d125-d12a-da82.ngrok-free.app","http://192.168.1.6:3000","http://192.168.1.6:5000","https://tiny-toffee-e5ee83.netlify.app/"]; // frontend origin
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -73,18 +73,5 @@ app.listen(5000, "0.0.0.0", ()=>{
 
 
 
-// Example Usage
 
 
-// const bcrypt = require("bcrypt")
-
-// let passwordbcrypt ;
-// const hashPassword = async (password) => {
-//     const saltRounds = 10;
-//     const hashed = await bcrypt.hash(password, saltRounds);
-//     passwordbcrypt=hashed
-//     console.log(hashed)
-//     return hashed;
-//   }
-
-// module.exports = {hashPassword,passwordbcrypt}
