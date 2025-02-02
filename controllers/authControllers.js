@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
     const userData = await User.findOne({ email }).select("+password");
 
     if (!userData) {
-      return res.status(404).json({ msg: "No user found" });
+      return res.status(404).json({ msg: "oops! No user found with the provided email" });
     }
 
     // Verify password
@@ -95,7 +95,7 @@ exports.createUser = async (req, res) => {
   // console.log(req.files); // Log the uploaded files
 
   // Extract form data
-  const { name, email, password, linkedInUrl, portfolioUrl, collegeUrl, githubUrl, areasInterestedIn } = req.body;
+  const { name, email, password, linkedInUrl, portfolioUrl, collegeUrl, githubUrl, areasInterestedIn,about } = req.body;
 
   // Extract file data from req.files
   const s3profilePhotoUrl = await req.files["profilePhoto"] ? req.files["profilePhoto"][0].location : null;
@@ -106,6 +106,7 @@ exports.createUser = async (req, res) => {
     const newUser = new User({
       name,
       email,
+      about,
       password: hashedPassword,
       profilePhotoUrl: s3profilePhotoUrl,
       coverPhotoUrl: s3coverPhotoUrl,
